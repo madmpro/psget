@@ -21,7 +21,7 @@ else {
 $global:CommonGlobalModuleBasePath = Join-Path -Path $env:ProgramFiles -ChildPath 'WindowsPowerShell\Modules'
 
 if (-not (Test-Path -Path:variable:global:PsGetDirectoryUrl)) {
-    $global:PsGetDirectoryUrl = 'https://github.com/psget/psget/raw/master/Directory.xml'
+    $global:PsGetDirectoryUrl = 'https://github.com/madmpro/psget/raw/master/Directory.xml'
 }
 # NOTE: $global:PsGetDestinationModulePath is used by Install-Module as configuration if set by user.
 
@@ -162,7 +162,7 @@ Set-Variable -Name PSGET_PSD1 -Value 'PSD1' -Option Constant -Scope Script
         Installs the PsUrl module with name specified, because command will not be able to guess it
 
     .EXAMPLE
-        # Install-Module -ModuleUrl https://github.com/psget/psget/raw/master/TestModules/HelloWorld.zip
+        # Install-Module -ModuleUrl https://github.com/madmpro/psget/raw/master/TestModules/HelloWorld.zip
 
         Description
         -----------
@@ -1323,7 +1323,7 @@ function Import-ModuleGlobally {
 
         # For psget no further checks are needed and their execution cause
         # an error for the update process of 'psget'
-        # https://github.com/psget/psget/issues/186
+        # https://github.com/madmpro/psget/issues/186
         if ($ModuleName -eq 'PsGet') {
             return
         }

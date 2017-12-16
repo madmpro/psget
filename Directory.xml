@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom"
       xmlns:psget="urn:psget:v1.0">
   <title type="text">PowerShell Modules Directory</title>
-  <id>https://github.com/psget/psget/raw/master/Directory.xml</id>
-  <!--<updated>2011-05-01T12:45:13Z</updated> -->  
+  <id>https://github.com/madmpro/psget/raw/master/Directory.xml</id>
+  <!--<updated>2011-05-01T12:45:13Z</updated> -->
   <entry>
     <id>Find-String</id>
     <title type="text">Find-String</title>
@@ -85,9 +85,9 @@
       <uri>http://chaliy.name</uri>
       <email>mike@chaliy.name</email>
     </author>
-    <content type="text/plain" src="https://github.com/psget/psget/raw/master/PsGet/PsGet.psm1" />
+    <content type="text/plain" src="https://github.com/madmpro/psget/raw/master/PsGet/PsGet.psm1" />
     <psget:properties>
-      <psget:ProjectUrl>https://github.com/psget/psget/</psget:ProjectUrl>
+      <psget:ProjectUrl>https://github.com/madmpro/psget/</psget:ProjectUrl>
     </psget:properties>
   </entry>
   <entry>
@@ -1310,7 +1310,7 @@
       <uri>https://github.com/weirdpattern</uri>
     </author>
     <content type="application/zip" src="https://github.com/weirdpattern/color-host/archive/master.zip" />
-    <psget:properties>	    
+    <psget:properties>
       <psget:ModuleName>ColorHost</psget:ModuleName>
       <psget:ProjectUrl>https://github.com/weirdpattern/color-host</psget:ProjectUrl>
     </psget:properties>

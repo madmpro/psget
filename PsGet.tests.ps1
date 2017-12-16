@@ -16,7 +16,7 @@ Describe 'Install-Module' {
     Context 'When modules are installed from Web URL Source' {
         Invoke-InSandbox {
             It 'Should support something simple' {
-                Install-Module -ModuleUrl https://github.com/psget/psget/raw/master/TestModules/HelloWorld.psm1 -Verbose:$verbose
+                Install-Module -ModuleUrl https://github.com/madmpro/psget/raw/master/TestModules/HelloWorld.psm1 -Verbose:$verbose
                 'HelloWorld' | Should BeInstalled
                 Drop-Module -Module 'HelloWorld'
             }
@@ -28,19 +28,19 @@ Describe 'Install-Module' {
             }
 
             It 'Should support zipped modules' {
-                Install-Module -ModuleUrl https://github.com/psget/psget/raw/master/TestModules/HelloWorld.zip  -Verbose:$verbose
+                Install-Module -ModuleUrl https://github.com/madmpro/psget/raw/master/TestModules/HelloWorld.zip  -Verbose:$verbose
                 'HelloWorldZip' | Should BeInstalled
                 Drop-Module -Module 'HelloWorldZip'
             }
 
             It 'Should support zipped in child folder modules' {
-                Install-Module -ModuleUrl https://github.com/psget/psget/raw/master/TestModules/HelloWorldInChildFolder.zip  -Verbose:$verbose
+                Install-Module -ModuleUrl https://github.com/madmpro/psget/raw/master/TestModules/HelloWorldInChildFolder.zip  -Verbose:$verbose
                 'HelloWorld' | Should BeInstalled
                 Drop-Module -Module 'HelloWorld'
             }
 
             It 'Should support alternate install destination' {
-                Install-Module -ModuleUrl https://github.com/psget/psget/raw/master/TestModules/HelloWorld.psm1 -Destination $Env:TEMP\Modules -Verbose:$verbose
+                Install-Module -ModuleUrl https://github.com/madmpro/psget/raw/master/TestModules/HelloWorld.psm1 -Destination $Env:TEMP\Modules -Verbose:$verbose
                 if (-not (Test-Path -Path $Env:TEMP\Modules\HelloWorld\HelloWorld.psm1)) {
                     throw 'Module was not installed to alternate destination'
                 }
@@ -148,7 +148,7 @@ Describe 'Install-Module' {
             It 'Should install module from directory url specified in global variable' {
                 $OriginalPsGetDirectoryUrl = $global:PsGetDirectoryUrl
                 try {
-                    $global:PsGetDirectoryUrl = 'https://github.com/psget/psget/raw/master/TestModules/Directory.xml'
+                    $global:PsGetDirectoryUrl = 'https://github.com/madmpro/psget/raw/master/TestModules/Directory.xml'
                     Install-Module -Module HelloWorld -Verbose:$verbose
                     'HelloWorld' | Should BeInstalled
                 } finally {
@@ -181,7 +181,7 @@ Describe 'Install-Module' {
             It 'Should output objects from Get-PsGetModuleInfo that have properties matching parameters of Install-Module' {
                 $retrieved = Get-PsGetModuleInfo -ModuleName HelloWorld -DirectoryUrl:"file://$here\TestModules\Directory.xml" -Verbose:$verbose
                 $retrieved.Id | Should Be 'HelloWorld'
-                $retrieved.ModuleUrl | Should Be 'https://github.com/psget/psget/raw/master/TestModules/HelloWorld.psm1'
+                $retrieved.ModuleUrl | Should Be 'https://github.com/madmpro/psget/raw/master/TestModules/HelloWorld.psm1'
             }
 
             It 'Should support piping from Get-PsGetModuleInfo to Install-Module' {
@@ -253,14 +253,14 @@ Describe 'Install-Module' {
         Invoke-InSandbox {
             $userModulePath = Get-UserModulePath
             It 'Should install module matching the expected hash' {
-                Install-Module -ModuleName HelloWorld -ModuleUrl https://github.com/psget/psget/raw/master/TestModules/HelloWorldInChildFolder.zip -ModuleHash 722377BA6AE291B6109C7ECEBE5E2B0745B46A070238F7D05FC0DCA68F8BAD03 -Verbose:$verbose
+                Install-Module -ModuleName HelloWorld -ModuleUrl https://github.com/madmpro/psget/raw/master/TestModules/HelloWorldInChildFolder.zip -ModuleHash 722377BA6AE291B6109C7ECEBE5E2B0745B46A070238F7D05FC0DCA68F8BAD03 -Verbose:$verbose
                 'HelloWorld' | Should BeInstalled
                 Drop-Module -Module HelloWorld
             }
 
             It 'Should not install a module with a conflicting hash' {
                 try {
-                    Install-Module -ModuleName HelloWorld -ModuleUrl https://github.com/psget/psget/raw/master/TestModules/HelloWorldInChildFolder.zip -ModuleHash AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -Verbose:$verbose
+                    Install-Module -ModuleName HelloWorld -ModuleUrl https://github.com/madmpro/psget/raw/master/TestModules/HelloWorldInChildFolder.zip -ModuleHash AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -Verbose:$verbose
                 } catch { $_ }
                 if (Test-Path $userModulePath/HelloWorld/HelloWorld.psm1) {
                     throw 'Module HelloWorld was installed but Should not have been installed.'
@@ -270,14 +270,14 @@ Describe 'Install-Module' {
 
             It 'Should reinstall a module When the existing installation has a conflicting hash' {
                 # make sure it is installed but not imported
-                Install-Module -ModuleName HelloWorld -ModuleUrl https://github.com/psget/psget/raw/master/TestModules/HelloWorldInChildFolder.zip -ModuleHash 722377BA6AE291B6109C7ECEBE5E2B0745B46A070238F7D05FC0DCA68F8BAD03 -DoNotImport -Verbose:$verbose
+                Install-Module -ModuleName HelloWorld -ModuleUrl https://github.com/madmpro/psget/raw/master/TestModules/HelloWorldInChildFolder.zip -ModuleHash 722377BA6AE291B6109C7ECEBE5E2B0745B46A070238F7D05FC0DCA68F8BAD03 -DoNotImport -Verbose:$verbose
                 # change the module so the hash is wrong
                 Set-Content -Path $userModulePath\HelloWorld\extrafile.txt -Value ExtraContent
 
                 Get-PSGetModuleHash -Path $here\TestModules\HelloWorldFolder
                 Get-PSGetModuleHash -Path $userModulePath\HelloWorld
 
-                Install-Module -ModuleName HelloWorld -ModuleUrl https://github.com/psget/psget/raw/master/TestModules/HelloWorldInChildFolder.zip -ModuleHash 722377BA6AE291B6109C7ECEBE5E2B0745B46A070238F7D05FC0DCA68F8BAD03 -Verbose:$verbose
+                Install-Module -ModuleName HelloWorld -ModuleUrl https://github.com/madmpro/psget/raw/master/TestModules/HelloWorldInChildFolder.zip -ModuleHash 722377BA6AE291B6109C7ECEBE5E2B0745B46A070238F7D05FC0DCA68F8BAD03 -Verbose:$verbose
                 if ((Get-PSGetModuleHash -Path $userModulePath\HelloWorld) -ne '722377BA6AE291B6109C7ECEBE5E2B0745B46A070238F7D05FC0DCA68F8BAD03') {
                     throw 'Module HelloWorld was not reinstalled to fix the hash.'
                 }

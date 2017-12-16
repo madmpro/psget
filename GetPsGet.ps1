@@ -1,6 +1,6 @@
 
 param (
-  $url = "https://github.com/psget/psget/raw/master/PsGet/PsGet.psm1"
+  $url = "https://github.com/madmpro/psget/raw/master/PsGet/PsGet.psm1"
 )
 
 function Find-Proxy() {
@@ -58,13 +58,13 @@ function Get-File {
 }
 
 function Install-PsGet {
-  
+
     param (
       [string]
       # URL to the respository to download PSGet from
       $url
     )
-  
+
     $ModulePaths = @($env:PSModulePath -split ':')
     # $PsGetDestinationModulePath is mostly needed for testing purposes,
     if ((Test-Path -Path Variable:PsGetDestinationModulePath) -and $PsGetDestinationModulePath) {

@@ -31,7 +31,7 @@ function Enter-Sandbox {
         $testDrive = (Get-Item 'TestDrive:\').FullName
         $global:UserModuleBasePath = ConvertTo-CanonicalPath -Path "$testDrive\user"
         $global:CommonGlobalModuleBasePath = ConvertTo-CanonicalPath -Path "$testDrive\machine"
-        $global:PsGetDirectoryUrl = 'https://github.com/psget/psget/raw/master/Directory.xml'
+        $global:PsGetDirectoryUrl = 'https://github.com/madmpro/psget/raw/master/Directory.xml'
 
         $script:backup_PSModulePathUser = [Environment]::GetEnvironmentVariable('PSModulePath', 'User')
         $script:backup_PSModulePathProcess = [Environment]::GetEnvironmentVariable('PSModulePath', 'Process')

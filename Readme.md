@@ -12,7 +12,7 @@ In your prompt execute:
 
 And if you get something like this:
 
-	Downloading PsGet from https://github.com/psget/psget/raw/master/PsGet/PsGet.psm1
+	Downloading PsGet from https://github.com/madmpro/psget/raw/master/PsGet/PsGet.psm1
 	PsGet is installed and ready to use
 
 You are done. The PowerShell script downloads `GetPsGet.ps1` and sends it to `Invoke-Expression` to install the PsGet Module.
@@ -39,24 +39,24 @@ Examples
 To install something from central directory just type:
 
     install-module PsUrl
-    
+
 This command queries central directory to find required information about the PsUrl module and install it if found.
 
 As another example on [how to install the `PsUrl` module](https://github.com/chaliy/psurl/raw/master/PsUrl/PsUrl.psm1), use
 
     install-module -ModuleUrl https://github.com/chaliy/psurl/raw/master/PsUrl/PsUrl.psm1
-    
+
 With zipped modules like `posh-git`, you can install [zip package](https://github.com/dahlbyk/posh-git/zipball/master) via
 
     install-module -ModuleUrl https://github.com/dahlbyk/posh-git/zipball/master
-    
+
 This command executes `Install.ps1` which installs script for `posh-git`. (`posh-git` is in the directory, so `install-module posh-git` is enough.)
 
 And of course, it supports local files, both ZIP and PSM1:
 
     install-module -ModulePath \TestModules\HelloWorld.zip
     install-module -ModulePath \TestModules\HelloWorld.psm1
-    
+
 You can also have a given module start with your profile:
 
     install-module PsUrl -Startup   
@@ -74,14 +74,14 @@ FAQ
 ===
 
 Q: Error `File [x] cannot be loaded because the execution of scripts is disabled on this system. Please see "get-help about_signing" for more details.`
-A: By default, PowerShell restricts execution of all scripts which is all about security. As a "fix", please run PowerShell as Administrator and call 
-    
+A: By default, PowerShell restricts execution of all scripts which is all about security. As a "fix", please run PowerShell as Administrator and call
+
     Set-ExecutionPolicy RemoteSigned
-    
+
 For mode details, run `get-help` [about_Execution_Policies](http://msdn.microsoft.com/en-us/library/dd347641.aspx).
 
 Q: How to add my module to the directory?
-A: Review a [small section](https://github.com/psget/psget/wiki/How-to-add-your-module-to-the-directory) of the [wiki](https://github.com/psget/psget/wiki)
+A: Review a [small section](https://github.com/madmpro/psget/wiki/How-to-add-your-module-to-the-directory) of the [wiki](https://github.com/madmpro/psget/wiki)
 
 
 Roadmap
@@ -104,11 +104,11 @@ Resources
 Contributing
 ============
 
-If you are interested in contributing to PsGet, please read this [page](https://github.com/psget/psget/wiki/How-can-I-contribute-to-PsGet) from [wiki](https://github.com/psget/psget/wiki)
+If you are interested in contributing to PsGet, please read this [page](https://github.com/madmpro/psget/wiki/How-can-I-contribute-to-PsGet) from [wiki](https://github.com/madmpro/psget/wiki)
 
 Credits
 =======
 
 Module based on [Install-Module by Joel Bennett](http://poshcode.org/1875)
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/psget/psget/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/madmpro/psget/trend.png)](https://bitdeli.com/free "Bitdeli Badge")

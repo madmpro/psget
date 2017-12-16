@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom"
       xmlns:psget="urn:psget:v1.0">
   <title type="text">PsGet Test Modules</title>
-  <id>https://github.com/psget/psget/raw/master/TestModules/Directory.xml</id>
+  <id>https://github.com/madmpro/psget/raw/master/TestModules/Directory.xml</id>
   <!--<updated>2011-05-01T12:45:13Z</updated> -->
   <entry>
     <id>HelloWorld</id>
@@ -11,10 +11,10 @@
     <updated>2011-05-01T15:52:10-07:00</updated>
     <author>
       <name>Mike Chaliy</name>
-    </author>    
-    <content type="text/plain" src="https://github.com/psget/psget/raw/master/TestModules/HelloWorld.psm1" />
+    </author>
+    <content type="text/plain" src="https://github.com/madmpro/psget/raw/master/TestModules/HelloWorld.psm1" />
     <psget:properties>
-      <psget:ProjectUrl>https://github.com/psget/psget/</psget:ProjectUrl>      
+      <psget:ProjectUrl>https://github.com/madmpro/psget/</psget:ProjectUrl>
     </psget:properties>
   </entry>
   <entry>
@@ -24,10 +24,10 @@
     <updated>2011-05-01T15:52:10-07:00</updated>
     <author>
       <name>Mike Chaliy</name>
-    </author>    
-    <content type="application/zip" src="https://github.com/psget/psget/raw/master/TestModules/HelloWorld.zip" />
+    </author>
+    <content type="application/zip" src="https://github.com/madmpro/psget/raw/master/TestModules/HelloWorld.zip" />
     <psget:properties>
-      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>      
+      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>
     </psget:properties>
   </entry>
   <entry>
@@ -37,11 +37,11 @@
     <updated>2011-05-01T15:52:10-07:00</updated>
     <author>
       <name>Florian Freudenberg</name>
-    </author>    
-    <content type="application/zip" src="https://github.com/psget/psget/raw/master/TestModules/HelloWorldWithInstall.zip" />
+    </author>
+    <content type="application/zip" src="https://github.com/madmpro/psget/raw/master/TestModules/HelloWorldWithInstall.zip" />
     <psget:properties>
       <psget:ModuleName>HelloWorld</psget:ModuleName>
-      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>   
+      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>
     </psget:properties>
   </entry>
   <entry>
@@ -51,11 +51,11 @@
     <updated>2011-05-01T15:52:10-07:00</updated>
     <author>
       <name>Florian Freudenberg</name>
-    </author>    
-    <content type="application/zip" src="https://github.com/psget/psget/raw/master/TestModules/HelloWorldWithInstall.zip" />
+    </author>
+    <content type="application/zip" src="https://github.com/madmpro/psget/raw/master/TestModules/HelloWorldWithInstall.zip" />
     <psget:properties>
       <psget:ModuleName>HelloWorld</psget:ModuleName>
-      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>    
+      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>
       <psget:PostInstallHook>Install.ps1</psget:PostInstallHook>
       <psget:PostUpdateHook>none</psget:PostUpdateHook>
     </psget:properties>
@@ -67,12 +67,12 @@
     <updated>2011-05-01T15:52:10-07:00</updated>
     <author>
       <name>Florian Freudenberg</name>
-    </author>    
-    <content type="application/zip" src="https://github.com/psget/psget/raw/master/TestModules/HelloWorldWithInstall.zip" />
+    </author>
+    <content type="application/zip" src="https://github.com/madmpro/psget/raw/master/TestModules/HelloWorldWithInstall.zip" />
     <psget:properties>
       <psget:ModuleName>HelloWorld</psget:ModuleName>
-      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>  
-      <psget:NoPostInstallHook>true</psget:NoPostInstallHook>  
+      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>
+      <psget:NoPostInstallHook>true</psget:NoPostInstallHook>
     </psget:properties>
   </entry>
   <entry>
@@ -82,13 +82,13 @@
     <updated>2011-05-01T15:52:10-07:00</updated>
     <author>
       <name>Florian Freudenberg</name>
-    </author>    
-    <content type="application/zip" src="https://github.com/psget/psget/raw/master/TestModules/HelloWorldWithPostHook.zip" />
+    </author>
+    <content type="application/zip" src="https://github.com/madmpro/psget/raw/master/TestModules/HelloWorldWithPostHook.zip" />
     <psget:properties>
       <psget:ModuleName>HelloWorld</psget:ModuleName>
-      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl> 
-      <psget:NoPostInstallHook>false</psget:NoPostInstallHook> 
-      <psget:PostInstallHook>PostHook.ps1</psget:PostInstallHook>  
+      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>
+      <psget:NoPostInstallHook>false</psget:NoPostInstallHook>
+      <psget:PostInstallHook>PostHook.ps1</psget:PostInstallHook>
     </psget:properties>
   </entry>
   <entry>
@@ -98,13 +98,13 @@
     <updated>2011-05-01T15:52:10-07:00</updated>
     <author>
       <name>Florian Freudenberg</name>
-    </author>    
-    <content type="application/zip" src="https://github.com/psget/psget/raw/master/TestModules/HelloWorldWithPostHook.zip" />
+    </author>
+    <content type="application/zip" src="https://github.com/madmpro/psget/raw/master/TestModules/HelloWorldWithPostHook.zip" />
     <psget:properties>
       <psget:ModuleName>HelloWorld</psget:ModuleName>
-      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl> 
-      <psget:NoPostInstallHook>true</psget:NoPostInstallHook> 
-      <psget:PostInstallHook>PostHook.ps1</psget:PostInstallHook>     
+      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>
+      <psget:NoPostInstallHook>true</psget:NoPostInstallHook>
+      <psget:PostInstallHook>PostHook.ps1</psget:PostInstallHook>
     </psget:properties>
   </entry>
   <entry>
@@ -114,14 +114,14 @@
     <updated>2011-05-01T15:52:10-07:00</updated>
     <author>
       <name>Florian Freudenberg</name>
-    </author>    
-    <content type="application/zip" src="https://github.com/psget/psget/raw/master/TestModules/HelloWorldWithPostInUp.zip" />
+    </author>
+    <content type="application/zip" src="https://github.com/madmpro/psget/raw/master/TestModules/HelloWorldWithPostInUp.zip" />
     <psget:properties>
       <psget:ModuleName>HelloWorld</psget:ModuleName>
-      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>  
-      <psget:NoPostInstallHook>false</psget:NoPostInstallHook> 
+      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>
+      <psget:NoPostInstallHook>false</psget:NoPostInstallHook>
       <psget:PostInstallHook>PostInstall.ps1</psget:PostInstallHook>
-      <psget:PostUpdateHook>PostUpdate.ps1</psget:PostUpdateHook>      
+      <psget:PostUpdateHook>PostUpdate.ps1</psget:PostUpdateHook>
     </psget:properties>
   </entry>
   <entry>
@@ -131,14 +131,14 @@
     <updated>2011-05-01T15:52:10-07:00</updated>
     <author>
       <name>Florian Freudenberg</name>
-    </author>    
-    <content type="application/zip" src="https://github.com/psget/psget/raw/master/TestModules/HelloWorldWithPostInUp.zip" />
+    </author>
+    <content type="application/zip" src="https://github.com/madmpro/psget/raw/master/TestModules/HelloWorldWithPostInUp.zip" />
     <psget:properties>
       <psget:ModuleName>HelloWorld</psget:ModuleName>
-      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl> 
-      <psget:NoPostInstallHook>true</psget:NoPostInstallHook> 
+      <psget:ProjectUrl>https://github.com/chaliy/psget/</psget:ProjectUrl>
+      <psget:NoPostInstallHook>true</psget:NoPostInstallHook>
       <psget:PostInstallHook>PostInstall.ps1</psget:PostInstallHook>
-      <psget:PostUpdateHook>PostUpdate.ps1</psget:PostUpdateHook>         
+      <psget:PostUpdateHook>PostUpdate.ps1</psget:PostUpdateHook>
     </psget:properties>
   </entry>
 </feed>
