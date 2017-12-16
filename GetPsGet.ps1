@@ -65,7 +65,7 @@ function Install-PsGet {
       $url
     )
   
-    $ModulePaths = @($env:PSModulePath -split ';')
+    $ModulePaths = @($env:PSModulePath -split ':')
     # $PsGetDestinationModulePath is mostly needed for testing purposes,
     if ((Test-Path -Path Variable:PsGetDestinationModulePath) -and $PsGetDestinationModulePath) {
         $Destination = $PsGetDestinationModulePath
